@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <title>Family Tree Nabi Muhammad ﷺ</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+<header>
+  <h1>🌳 Family Tree Nabi Muhammad ﷺ</h1>
+  <p id="info">📊 Total Node: 0 | 🌲 Depth: 0</p>
+  <nav>
+    <button onclick="showPage('input')" class="active">Input Anggota Keluarga</button>
+    <button onclick="showPage('visual')">Visualisasi Tree</button>
+    <button onclick="showPage('panduan')">Panduan Aplikasi</button>
+    <button onclick="showPage('algoritma')">Algoritma</button>
+    <button onclick="showPage('struktur')">Representasi Struktur Data</button>
+    <button onclick="showPage('konsep')">Konsep Mtk</button>
+    <button onclick="showPage('about')">About</button>
+  </nav>
+</header>
+
+<main>
+
+<!-- INPUT -->
+<section id="input" class="page active">
+  <h2>Input Anggota Keluarga</h2>
+  <form id="familyForm">
+    <label>Nama Anggota</label>
+    <input type="text" id="name" required />
+    <label>Nama Orang Tua</label>
+    <input type="text" id="parent" placeholder="Kosongkan jika root" />
+    <label>Avatar URL</label>
+    <input type="text" id="avatar" placeholder="kosong = default-node.jpg" />
+    <label>Biografi Singkat</label>
+    <textarea id="bio" placeholder="Tulis biografi node"></textarea>
+    <button type="submit">Tambah Node</button>
+  </form>
+  <p class="note">📌 Data disimpan otomatis (Local Storage)</p>
+</section>
+
+<!-- VISUALISASI -->
+<section id="visual" class="page">
+  <h2>Visualisasi Family Tree</h2>
+  <div id="treeContainer"></div>
+
+  <!-- Modal Biografi -->
+  <div id="bioModal" class="hidden">
+    <div id="bioContent">
+      <span id="closeModal">&times;</span>
+      <h3 id="bioTitle"></h3>
+      <p id="bioText"></p>
+    </div>
+  </div>
+</section>
+
+<!-- PANDUAN -->
+<section id="panduan" class="page">
+  <h2>Panduan Aplikasi</h2>
+  <ol>
+    <li>Masuk ke menu <b>Input Anggota Keluarga</b></li>
+    <li>Tambahkan anggota keluarga sesuai struktur parent–child</li>
+    <li>Node baru otomatis tersimpan ke Local Storage</li>
+    <li>Klik node untuk melihat biografi</li>
+    <li>Lihat hasil pada menu <b>Visualisasi Tree</b></li>
+    <li>Jumlah node dan depth ditampilkan otomatis</li>
+  </ol>
+  <p class="note">🧭 Panduan ini membantu pengguna memahami alur aplikasi</p>
+</section>
+
+<!-- ALGORITMA -->
+<section id="algoritma" class="page">
+  <h2>Algoritma</h2>
+  <pre>
+START
+Load data tree dari Local Storage
+Jika kosong, gunakan tree default
+User input node baru
+Cari parent menggunakan DFS
+Tambahkan node sebagai child
+Simpan kembali ke Local Storage
+Hitung total node dan depth
+Tampilkan tree
+END
+  </pre>
+  <p class="note">🔁 DFS cocok untuk struktur data pohon</p>
+</section>
+
+<!-- STRUKTUR DATA -->
+<section id="struktur" class="page">
+  <h2>Representasi Struktur Data</h2>
+  <pre>
+Node {
+  nama: string
+  avatar: string
+  bio: string
+  anak: array of Node
+}
+  </pre>
+  <p class="note">🌲 Struktur data ini merepresentasikan hubungan hierarki keluarga</p>
+</section>
+
+<!-- KONSEP MTK -->
+<section id="konsep" class="page">
+  <h2>Konsep Matematika Informatika</h2>
+  <ul>
+    <li>Tree (Pohon)</li>
+    <li>Node</li>
+    <li>Root</li>
+    <li>Parent – Child</li>
+    <li>Depth</li>
+    <li>Traversal DFS</li>
+    <li>Hierarki Data</li>
+  </ul>
+  <p class="note">📐 Semua konsep diimplementasikan langsung di aplikasi</p>
+</section>
+
+<!-- ABOUT -->
+<section id="about" class="page">
+  <h2>About</h2>
+  <p>Aplikasi ini dibuat sebagai project UAS Matematika Informatika untuk memodelkan struktur data pohon menggunakan studi kasus silsilah keluarga Nabi Muhammad ﷺ.</p>
+  <div class="profile">
+    <img src="assets/tressa.png" alt="Foto Mochammad Tressa Marino Suitela" />
+    <ul>
+      <li><strong>Nama Mahasiswa:</strong> Mochammad Tressa Marino Suitela</li>
+      <li><strong>NIM:</strong> 252505005</li>
+      <li><strong>Jurusan:</strong> Sistem Informasi</li>
+      <li><strong>Universitas:</strong> Ma'soem University</li>
+    </ul>
+  </div>
+</section>
+
+</main>
+
+<footer>© 2025 Ma'soem University</footer>
+
+<script src="script.js"></script>
+</body>
+</html>
